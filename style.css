@@ -1,0 +1,1053 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #faf6f3;
+    color: #3b3030;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 50;
+    overflow: hidden;
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: -30px;
+    color: #e6aaaa;
+    animation: floatHeart linear forwards;
+    opacity: 0;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .7;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(40, 24, 27, .55),
+            rgba(40, 24, 27, .72)
+        ),
+        url("imags/gallery.jpg.jpeg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+
+    color: white;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 30px;
+}
+
+
+/* =========================
+   BIG HEART
+========================= */
+
+.big-heart {
+    width: min(600px, 85vw);
+    height: 480px;
+
+    margin: 0 auto 25px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: bigHeartBeat 2s infinite;
+}
+
+
+/* قلبين كبار متداخلين */
+
+.big-heart::before,
+.big-heart::after {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 400px;
+
+    background: rgba(190, 100, 110, .82);
+
+    border-radius: 180px 180px 0 0;
+
+    top: 35px;
+}
+
+.big-heart::before {
+    left: 105px;
+
+    transform:
+        rotate(-45deg);
+
+    transform-origin:
+        0 100%;
+}
+
+.big-heart::after {
+    right: 105px;
+
+    transform:
+        rotate(45deg);
+
+    transform-origin:
+        100% 100%;
+}
+
+
+.heart-text {
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    text-shadow:
+        0 3px 15px rgba(0,0,0,.35);
+}
+
+
+.birthday-text {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(38px, 6vw, 70px);
+
+    font-weight: 600;
+
+    line-height: 1;
+}
+
+
+.name {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(55px, 9vw, 100px);
+
+    font-weight: 700;
+
+    font-style: italic;
+
+    line-height: 1;
+
+    margin-top: 8px;
+}
+
+
+.heart-symbol {
+    font-size: 28px;
+    margin-top: 12px;
+}
+
+
+@keyframes bigHeartBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.035);
+    }
+}
+
+
+/* =========================
+   HERO TEXT
+========================= */
+
+.hero-subtitle {
+    text-transform: uppercase;
+
+    letter-spacing: 5px;
+
+    font-size: 11px;
+
+    margin-top: 5px;
+
+    opacity: .9;
+}
+
+
+.hero-description {
+    max-width: 550px;
+
+    margin: 18px auto 30px;
+
+    line-height: 2;
+
+    font-size: 14px;
+
+    opacity: .9;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.start-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 15px 28px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.65);
+
+    color: white;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    transition: .3s;
+}
+
+.start-btn:hover {
+    background: white;
+    color: #4b3737;
+}
+
+.start-btn span {
+    font-size: 20px;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    text-align: center;
+
+    max-width: 720px;
+
+    margin: auto;
+
+    padding: 120px 30px;
+}
+
+.section-label {
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    font-size: 11px;
+
+    color: #a67d7d;
+
+    margin-bottom: 20px;
+}
+
+.intro h2,
+.section-heading h2 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(38px, 5vw, 58px);
+
+    font-weight: 500;
+
+    margin-bottom: 25px;
+}
+
+.intro > p:last-child {
+    font-size: 15px;
+
+    line-height: 2;
+
+    color: #806d6d;
+}
+
+
+/* =========================
+   PARCHMENT SECTION
+========================= */
+
+.parchment-section {
+    padding: 120px 20px;
+
+    background:
+        #eadbc0;
+
+    position: relative;
+}
+
+
+/* الورقة */
+
+.parchment {
+    max-width: 850px;
+
+    margin: auto;
+
+    position: relative;
+
+    padding: 80px 75px;
+
+    background:
+        linear-gradient(
+            rgba(255, 247, 220, .72),
+            rgba(221, 194, 147, .72)
+        );
+
+    border:
+        1px solid
+        rgba(126, 94, 52, .4);
+
+    box-shadow:
+        0 25px 60px
+        rgba(70, 45, 20, .25);
+
+    transform: rotate(-.3deg);
+}
+
+
+/* أطراف البردية */
+
+.parchment::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border:
+        1px solid
+        rgba(112, 77, 35, .35);
+
+    pointer-events: none;
+}
+
+
+/* تأثيرات قديمة */
+
+.parchment::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(130,90,40,.12),
+            transparent 20%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(130,90,40,.1),
+            transparent 25%
+        );
+
+    pointer-events: none;
+}
+
+
+.parchment-content {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    direction: rtl;
+}
+
+
+.arabic-small {
+    font-family: "Amiri", serif;
+
+    color: #87643c;
+
+    font-size: 17px;
+
+    margin-bottom: 10px;
+}
+
+
+.parchment h2 {
+    font-family: "Amiri", serif;
+
+    font-size:
+        clamp(42px, 6vw, 65px);
+
+    color: #5b4027;
+
+    margin-bottom: 15px;
+}
+
+
+.arabic-line {
+    width: 90px;
+
+    height: 1px;
+
+    background: #8f6c43;
+
+    margin: 20px auto 35px;
+}
+
+
+.parchment-content p {
+    font-family: "Amiri", serif;
+
+    font-size:
+        clamp(18px, 2vw, 23px);
+
+    line-height: 2.15;
+
+    color: #4d3925;
+
+    margin-bottom: 20px;
+}
+
+
+.parchment-content .birthday-arabic {
+    font-weight: 700;
+
+    color: #674529;
+
+    margin-top: 35px;
+}
+
+
+.love-final {
+    font-size:
+        clamp(28px, 4vw, 42px) !important;
+
+    font-weight: 700;
+
+    color: #8b4d4d !important;
+
+    margin-top: 30px;
+}
+
+
+/* زخارف */
+
+.parchment-decoration {
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #8e6841;
+
+    font-size: 38px;
+
+    z-index: 3;
+}
+
+.parchment-decoration.top {
+    top: 25px;
+}
+
+.parchment-decoration.bottom {
+    bottom: 20px;
+}
+
+
+/* =========================
+   MEMORIES
+========================= */
+
+.memories {
+    padding: 120px 6%;
+}
+
+.section-heading {
+    text-align: center;
+
+    max-width: 700px;
+
+    margin:
+        0 auto 60px;
+}
+
+.section-heading > p:last-child {
+    color: #806d6d;
+
+    font-size: 14px;
+}
+
+
+.gallery {
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 30px;
+}
+
+
+.photo {
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.photo img {
+    height: 550px;
+
+    object-fit: cover;
+
+    transition:
+        transform .7s;
+}
+
+
+.photo:hover img {
+    transform: scale(1.05);
+}
+
+
+.photo-caption {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 25px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,.7)
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.photo-caption span {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 30px;
+}
+
+
+.photo-caption p {
+    font-size: 12px;
+}
+
+
+/* =========================
+   VIDEO
+========================= */
+
+.video-section {
+    padding: 110px 6%;
+
+    background: #f1e7e5;
+}
+
+
+video-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+
+    box-shadow:
+        0 20px 60px
+        rgba(50, 30, 30, .15);
+
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.video-container video {
+    width: 100%;
+    height: 380px;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================
+   SPECIAL
+========================= */
+
+.special-section {
+    padding: 140px 25px;
+
+    text-align: center;
+}
+
+
+.special-content {
+    max-width: 700px;
+
+    margin: auto;
+}
+
+
+.mini-heart {
+    color: #c58c8c;
+
+    font-size: 35px;
+
+    margin-bottom: 25px;
+
+    animation:
+        bigHeartBeat 1.5s infinite;
+}
+
+
+.special-content h2 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(40px,5vw,60px);
+
+    font-weight: 500;
+
+    margin-bottom: 25px;
+}
+
+
+.special-text {
+    color: #806d6d;
+
+    font-size: 15px;
+
+    line-height: 2.2;
+}
+
+
+/* =========================
+   CODE
+========================= */
+
+.code-section {
+    padding: 100px 20px;
+
+    background: #1d1b20;
+}
+
+
+.terminal {
+    max-width: 850px;
+
+    margin: auto;
+
+    background: #121114;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.3);
+}
+
+
+.terminal-top {
+    height: 50px;
+
+    background: #29262d;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 20px;
+
+    position: relative;
+}
+
+
+.terminal-top p {
+    position: absolute;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    color: #aaa;
+
+    font-size: 12px;
+}
+
+
+.terminal-buttons {
+    display: flex;
+
+    gap: 7px;
+}
+
+
+.terminal-buttons span {
+    width: 11px;
+
+    height: 11px;
+
+    border-radius: 50%;
+
+    background: #777;
+}
+
+
+.code-content {
+    padding: 40px;
+
+    color: #ddd;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 14px;
+
+    line-height: 2;
+}
+
+
+.purple {
+    color: #d7a8ff;
+}
+
+.blue {
+    color: #91c8ff;
+}
+
+.yellow {
+    color: #ffd98a;
+}
+
+.green {
+    color: #8ccf9b;
+}
+
+
+.progress {
+    height: 4px;
+
+    background: #302d33;
+
+    margin: 20px 0 10px;
+
+    overflow: hidden;
+}
+
+
+.progress-bar {
+    height: 100%;
+
+    width: 0;
+
+    background: #d69a9a;
+
+    transition:
+        width 3s ease;
+}
+
+
+.loading-text {
+    color: #999;
+
+    font-size: 12px;
+}
+
+
+.final-message {
+    display: none;
+
+    margin-top: 35px;
+
+    color: #ddd;
+
+    line-height: 2.2;
+}
+
+
+.final-message.show {
+    display: block;
+
+    animation:
+        fadeMessage 1.5s ease;
+}
+
+
+@keyframes fadeMessage {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+.code-comment {
+    color: #7fba87;
+
+    margin-bottom: 20px;
+}
+
+
+.last-line {
+    color: #f0b4b4;
+
+    font-size: 18px;
+
+    margin-top: 25px;
+}
+
+
+.signature {
+    color: #999;
+
+    margin-top: 10px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background: #241c1e;
+
+    color: white;
+}
+
+
+.footer-heart {
+    font-size: 35px;
+
+    color: #e1a5a5;
+
+    margin-bottom: 20px;
+
+    animation:
+        bigHeartBeat 1.5s infinite;
+}
+
+
+footer h2 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 38px;
+
+    font-weight: 500;
+
+    margin-bottom: 15px;
+}
+
+
+footer p {
+    font-size: 13px;
+
+    color: #c4b5b5;
+}
+
+
+footer .copyright {
+    margin-top: 30px;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .hero {
+        min-height: 100svh;
+    }
+
+
+    .big-heart {
+        width: 340px;
+        height: 330px;
+    }
+
+
+    .big-heart::before,
+    .big-heart::after {
+        width: 165px;
+        height: 270px;
+    }
+
+
+    .big-heart::before {
+        left: 50px;
+    }
+
+
+    .big-heart::after {
+        right: 50px;
+    }
+
+
+    .birthday-text {
+        font-size: 37px;
+    }
+
+
+    .name {
+        font-size: 58px;
+    }
+
+
+    .hero-description {
+        font-size: 12px;
+    }
+
+
+    .parchment {
+        padding:
+            70px 28px;
+    }
+
+
+    .parchment-content p {
+        font-size: 18px;
+
+        line-height: 2;
+    }
+
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+
+    .photo img {
+        height: 450px;
+    }
+
+
+    .code-content {
+        padding: 25px 18px;
+
+        font-size: 11px;
+    }
+
+
+    footer h2 {
+        font-size: 30px;
+    }
+
+}
